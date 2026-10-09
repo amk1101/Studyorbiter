@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#050607">
+  <meta name="description" content="A calm, browser-only study planner. Organize your subjects, chapters, test progress and next actions in a pixel-art universe.">
+  <title>Study Orbit — your study mission</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="model.js"></script>
+  <script defer src="hierarchy.js"></script>
+  <script defer src="tests.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+  <div class="shell" id="shell">
+    <aside class="sidebar" aria-label="Main navigation">
+      <a class="brand" href="#dashboard"><span class="brand-icon">✦</span><span class="nav-label">STUDY<br><b>ORBIT</b></span></a>
+      <button id="collapse" class="collapse icon-button" title="Collapse navigation" aria-label="Collapse navigation" aria-expanded="true">◀</button>
+      <div class="nav-caption nav-label">FLIGHT DECK</div>
+      <nav id="navigation">
+        <a href="#dashboard" data-nav="dashboard" title="Dashboard"><span class="nav-icon">⌂</span><span class="nav-label">Dashboard</span></a>
+        <a href="#subjects" data-nav="subjects" title="Subjects"><span class="nav-icon">▤</span><span class="nav-label">Subjects</span></a>
+        <a href="#tasks" data-nav="tasks" title="Study tasks"><span class="nav-icon">☑</span><span class="nav-label">Study tasks</span></a>
+        <a href="#revisions" data-nav="revisions" title="Revisions"><span class="nav-icon">↻</span><span class="nav-label">Revisions</span></a>
+        <a href="#tests" data-nav="tests" title="Tests and progress"><span class="nav-icon">⌁</span><span class="nav-label">Tests & progress</span></a>
+        <a href="#calendar" data-nav="calendar" title="Calendar"><span class="nav-icon">▦</span><span class="nav-label">Calendar</span></a>
+        <a href="#settings" data-nav="settings" title="Settings and backup"><span class="nav-icon">⚙</span><span class="nav-label">Settings & backup</span></a>
+      </nav>
+      <div class="sidebar-bottom"><span class="status-dot"></span><span class="nav-label">SAVED IN THIS BROWSER<br><small>No account. No uploads.</small></span></div>
+    </aside>
+    <div class="content">
+      <header class="topbar"><span class="eyebrow">STUDENT FLIGHT SYSTEM / 01</span><span id="today-label"></span></header>
+      <main id="main" tabindex="-1"></main>
+      <footer>One chapter. One next action. One orbit at a time.</footer>
+    </div>
+  </div>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <noscript><p>This planner needs JavaScript enabled. All study data stays in your browser.</p></noscript>
+</body>
+</html>
