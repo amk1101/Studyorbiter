@@ -38,7 +38,7 @@
         chapters: c.chapters.map(ch => {
           if (!ch || !text(ch.title, 300).trim()) throw Error('A chapter needs a title.');
           const progress = bounded(ch.progress, 0, 100, ch.done === true ? 100 : 0),status=options(ch.status,['planned','studying','completed'],progress===100?'completed':progress>0?'studying':'planned');
-          return { id: unique(ch.id), title: text(ch.title, 300).trim(), category: text(ch.category, 60).trim() || 'Other', status, firstRevisionScheduled:ch.firstRevisionScheduled===true, progress, done:status==='completed', revised: date(ch.revised), studiedOn: date(ch.studiedOn), intervalWeeks: bounded(ch.intervalWeeks,1,104,1), notes: text(ch.notes, 20000) };
+          return { id: unique(ch.id), title: text(ch.title, 300).trim(), category: text(ch.category, 60).trim() || 'Other', status, firstRevisionScheduled:ch.firstRevisionScheduled===true, progress, done:status==='completed', revised: date(ch.revised), studiedOn: date(ch.studiedOn), lastUpdated:date(ch.lastUpdated), intervalWeeks: bounded(ch.intervalWeeks,1,104,1), notes: text(ch.notes, 20000) };
         })
       };
     });
